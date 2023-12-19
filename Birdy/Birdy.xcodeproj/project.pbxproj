@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F56AB802B31ED52007E0B45 /* TweetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56AB7F2B31ED52007E0B45 /* TweetRow.swift */; };
+		3F56AB822B320021007E0B45 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56AB812B320021007E0B45 /* LogInView.swift */; };
 		3F918E2F2B29FB21002F2AB7 /* BirdyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F918E2E2B29FB21002F2AB7 /* BirdyApp.swift */; };
 		3F918E312B29FB21002F2AB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F918E302B29FB21002F2AB7 /* ContentView.swift */; };
 		3F918E332B29FB24002F2AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F918E322B29FB24002F2AB7 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F56AB7F2B31ED52007E0B45 /* TweetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRow.swift; sourceTree = "<group>"; };
+		3F56AB812B320021007E0B45 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		3F918E2B2B29FB21002F2AB7 /* Birdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F918E2E2B29FB21002F2AB7 /* BirdyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdyApp.swift; sourceTree = "<group>"; };
 		3F918E302B29FB21002F2AB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,9 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				3F918E2E2B29FB21002F2AB7 /* BirdyApp.swift */,
+				3F56AB7F2B31ED52007E0B45 /* TweetRow.swift */,
 				3F918E302B29FB21002F2AB7 /* ContentView.swift */,
 				3F918E322B29FB24002F2AB7 /* Assets.xcassets */,
 				3F918E342B29FB24002F2AB7 /* Preview Content */,
+				3F56AB812B320021007E0B45 /* LogInView.swift */,
 			);
 			path = Birdy;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				3F918E312B29FB21002F2AB7 /* ContentView.swift in Sources */,
 				3F918E2F2B29FB21002F2AB7 /* BirdyApp.swift in Sources */,
+				3F56AB822B320021007E0B45 /* LogInView.swift in Sources */,
+				3F56AB802B31ED52007E0B45 /* TweetRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

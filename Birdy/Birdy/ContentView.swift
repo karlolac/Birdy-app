@@ -1,22 +1,39 @@
-//
-//  ContentView.swift
-//  Birdy
-//
-//  Created by student on 13.12.2023..
-//
-
-
-
 import SwiftUI
-struct Tweet{
+struct Tweet: Identifiable{
+    var id = UUID()
     let username:String
     var content:String
-    let date:Date
+    let date:Date=Date()
+    var isFavourite: Bool
 }
 
 struct ContentView: View {
     
-    var tweet: Tweet=Tweet(username:"karlolac", content:"The Earth is flat.",date:Date())
+    @State var tweets:[Tweet]=[
+        Tweet(
+            username:"karlolac",
+            content:"The Earth is flat.",
+            isFavourite:true
+        ),
+        
+        Tweet(
+            username:"sale123",
+            content:"The Earth is round.",
+            isFavourite:true
+        ),
+        
+        Tweet(
+            username:"luka321",
+            content:"The Earth is square.",
+            isFavourite:true
+        )
+        
+    ]
+    @State var content: String = " "
+    
+    @State var isPresented:Bool =  false
+     
+    @State var username:String = " "
     
     var body: some View {
         VStack {
@@ -24,39 +41,55 @@ struct ContentView: View {
                 Text("Birdy")
                     .font(.title)
                 Spacer()
-
-                Button(action: {} ){
-                    Text("Log in")
+                if username.isEmpty{
+                    Button(action: {isPresented=true
+                    } ){
+                        Text("Log in")
+                    }
                 }
+                else{
+                    Button(action: {username=""
+                    } ){
+                        Text("Log out")
+                    }
                 }
+            }
             
-           // Text("Today is my birthday")
-            //Text("This is Twitter")
-            //Text("The Earth is flat")
-            HStack{
-                Image("Image")
-                    .resizable()
-                    .frame(width: 65,height:65)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                Spacer()
-                VStack{
-                    Text(tweet.username)
-
-                    Text(tweet.date, style: .relative)
-                    Text(tweet.content)
-                    
+            List($tweets){tweet in
+                TweetRow(tweet:tweet)
+            }
+            .listStyle(.plain)
+            
+            Spacer()
+            if !username.isEmpty{
+                HStack{
+                    TextField("Content",text:$content)
+                    Button (action:{
+                        tweets.append(
+                            Tweet(  username: username,
+                                    content: content,
+                                    isFavourite: false))
+                        content=""
+                            })
+                        {
+                        Text("New tweet")
+                    }
+                        .disabled(content.isEmpty )
                 }
-                
                 
                 
             }
-            .padding(.leading)
-            Spacer()
+            
+           
+            
         }
         .padding()
-       
+        .sheet(isPresented:$isPresented){
+            LogInView(username: $username, isPresented: $isPresented)
+        }
     }
 }
+
 #Preview {
         ContentView()
     }
