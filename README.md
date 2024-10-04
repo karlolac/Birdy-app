@@ -1,5 +1,6 @@
 # ios_academy
 Birdy - iOS Aplikacija
+
 Birdy je jednostavna aplikacija slična Twitteru, razvijena tijekom iOS radionice. Aplikacija omogućuje korisnicima prijavu i objavljivanje "tweetova". Korisnici mogu kreirati tweetove, pregledavati popis tweetova, te označavati omiljene objave. 
 
 
